@@ -3,10 +3,6 @@ import {Card, CardImg, CardBody, CardText, CardTitle} from 'reactstrap'
 import {ListGroup, ListGroupItem} from 'reactstrap'
 
 class DishDetail extends Component {
-    constructor (props){
-        super(props);
-    }
-
     renderDish(){
         return (
             <CardBody>
@@ -22,7 +18,7 @@ class DishDetail extends Component {
                 return (
                     <ListGroupItem key={comment.id} className='border-0' color="dark">
                          <h6>{comment.comment}</h6> 
-                         <h6>-- {comment.author + ", " + comment.date}</h6>
+                         <h6>-- {comment.author + ", " + new Intl.DateTimeFormat('en-US', {year: 'numeric', month:'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</h6>
                     </ListGroupItem>
                 )
             });

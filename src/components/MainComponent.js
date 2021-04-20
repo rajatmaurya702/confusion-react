@@ -6,6 +6,12 @@ import {DISHES} from '../shared/dishes'
 
 
 class Main extends Component {
+  componentDidMount(){
+    console.log("Main, componentDidMount");
+}
+componentDidUpdate(){
+    console.log("Main, componentDidUpdate");
+}
   constructor (props) {
     super(props);
 
@@ -16,11 +22,12 @@ class Main extends Component {
   }
 
   onDishSelect(dish_id){
-      this.setState({selectDish: dish_id})
+    this.setState({selectDish: dish_id})
   }
 
   
   render(){
+    console.log("Main, render");
     return (
       <div className="App">
         <Navbar dark color="primary">
@@ -31,7 +38,7 @@ class Main extends Component {
 
 
 
-        <Menu dishes={this.state.dishes} on_click={(dish_id) => this.onDishSelect(dish_id)}/> {/* Here we pass function as a props to Menu component:: how this is working:: some doubt*/}
+        <Menu dishes={this.state.dishes} on_click={(dish_id) => this.onDishSelect(dish_id)}/> {/* Here we pass function as a props to Menu component:: how this is working:: still have doubt__ onClick vs on_click*/}
         <DishDetail dish={this.state.dishes.filter((dish)=> dish.id === this.state.selectDish)[0]}/>
       </div>
     );

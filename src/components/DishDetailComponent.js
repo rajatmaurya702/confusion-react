@@ -3,6 +3,12 @@ import {Card, CardImg, CardBody, CardText, CardTitle} from 'reactstrap'
 import {ListGroup, ListGroupItem} from 'reactstrap'
 
 class DishDetail extends Component {
+    componentDidMount(){
+        console.log("DishDetail, componentDidMount");
+    }
+    componentDidUpdate(){
+        console.log("DishDetail, componentDidUpdate");
+    }
     renderDish(){
         return (
             <CardBody>
@@ -38,17 +44,23 @@ class DishDetail extends Component {
     }
 
     render(){
+        console.log("DishDetail, render");
         if(this.props.dish){
             return (
-                <div className="row mt-5">
-                    <div className="col-12 col-md-5 m-2">
-                        <Card>
-                            <CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
-                            {this.renderDish(this.props.dish)}
-                        </Card>
+
+                <div className="container">
+                    <div className="row mt-5">
+                        <div className="col-12 col-md-5 m-2">
+                            <Card>
+                                <CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
+                                {this.renderDish(this.props.dish)}
+                            </Card>
+                        </div>
+                        {this.renderComment(this.props.dish.comments)}
                     </div>
-                    {this.renderComment(this.props.dish.comments)}
                 </div>
+                
+                    
             )
         }
         else{

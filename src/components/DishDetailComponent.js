@@ -1,9 +1,9 @@
 import React from 'react'
-import {Card, CardImg, CardBody, CardText, CardTitle} from 'reactstrap'
-import {ListGroup, ListGroupItem} from 'reactstrap'
+import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap'
+import { ListGroup, ListGroupItem } from 'reactstrap'
 
 
-const RenderDish = ({dish}) => { //name of component(functional or class) must start with capital letter
+const RenderDish = ({ dish }) => { //name of component(functional or class) must start with capital letter
     return (
         <CardBody>
             <CardTitle tag='h4'>{dish.name}</CardTitle>
@@ -12,17 +12,17 @@ const RenderDish = ({dish}) => { //name of component(functional or class) must s
     )
 }
 
- const RenderComment = ({comments}) => {
-    if(comments){
-        const items = comments.map((comment)=>{
+const RenderComment = ({ comments }) => {
+    if (comments) {
+        const items = comments.map((comment) => {
             return (
                 <ListGroupItem key={comment.id} className='border-0' color="dark">
-                        <h6>{comment.comment}</h6> 
-                        <h6>-- {comment.author + ", " + new Intl.DateTimeFormat('en-US', {year: 'numeric', month:'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</h6>
+                    <h6>{comment.comment}</h6>
+                    <h6>-- {comment.author + ", " + new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</h6>
                 </ListGroupItem>
             )
         });
-        return(
+        return (
             <div className="col-12 col-md-5 m-2">
                 <h4>Comments</h4>
                 <ListGroup>
@@ -31,14 +31,14 @@ const RenderDish = ({dish}) => { //name of component(functional or class) must s
             </div>
         )
     }
-    else{
+    else {
         return <div></div>
     }
-    
+
 }
 
 const DishDetail = (props) => {
-    if(props.dish){
+    if (props.dish) {
         return (
             <div className="container">
                 <div className="row mt-5">
@@ -50,14 +50,14 @@ const DishDetail = (props) => {
                     </div>
                     <RenderComment comments={props.dish.comments} />
                 </div>
-            </div>    
+            </div>
         )
     }
-    else{
+    else {
         return (<div></div>)
     }
 }
-        
-    
+
+
 
 export default DishDetail

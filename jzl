@@ -1,0 +1,47 @@
+[33mcommit 06060d3952e4e4194681199283598cf1e0d5531b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: rajatmaurya702 <rajatmaurya702@gmail.com>
+Date:   Wed Apr 21 00:07:30 2021 +0530
+
+    Functional Components
+
+[33mcommit 9e61a75b7f575f82d7ec15216731186d19455c3c[m
+Author: rajatmaurya702 <rajatmaurya702@gmail.com>
+Date:   Tue Apr 20 23:34:28 2021 +0530
+
+    life cycle methods introduction
+
+[33mcommit ddef0f2c410120267c561a1fefd39ab4d272e873[m
+Author: rajatmaurya702 <rajatmaurya702@gmail.com>
+Date:   Tue Apr 13 00:50:46 2021 +0530
+
+    presentational and container components
+
+[33mcommit 2f98170674c5cef596ec00667f16bb47bbe75eb4[m
+Author: rajatmaurya702 <rajatmaurya702@gmail.com>
+Date:   Mon Apr 12 01:36:57 2021 +0530
+
+    assignment 1 \n Replace details of dish with another Component i.e., DishDetailComponent
+
+[33mcommit 92c16de09a12fb5929aea8781566b3c38ff76f8b[m
+Author: rajatmaurya702 <rajatmaurya702@gmail.com>
+Date:   Sat Apr 10 01:30:56 2021 +0530
+
+    Components Part 2
+
+[33mcommit ec6baec4cbf93e890fb8d837c78328f9b00eb36f[m
+Author: rajatmaurya702 <rajatmaurya702@gmail.com>
+Date:   Fri Apr 9 00:52:26 2021 +0530
+
+    components Part 1
+
+[33mcommit 1486f1be5e2eb77527a77158541bb943f59fa1ad[m
+Author: rajatmaurya702 <55584680+rajatmaurya702@users.noreply.github.com>
+Date:   Mon Feb 22 19:04:43 2021 +0530
+
+    Configuring React
+
+[33mcommit 120f0f37b9f711e348eb4126821090fbbb798b03[m
+Author: rajatmaurya702 <55584680+rajatmaurya702@users.noreply.github.com>
+Date:   Wed Feb 17 18:32:52 2021 +0530
+
+    initial commit

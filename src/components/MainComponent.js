@@ -29,9 +29,10 @@ class Main extends Component {
       dishes: DISHES,
       leaders: LEADERS,
       promotions: PROMOTIONS,
-      comment: COMMENTS
+      comments: COMMENTS
     }
   }
+
 
 
   render() {
@@ -44,7 +45,14 @@ class Main extends Component {
         )
       }
 
-    // console.log("Main, render");
+      const DishWithid = ({match})=>{ //passes match, location, history
+        return (
+          <DishDetail dish={this.state.dishes.filter((dish)=>dish.id === parseInt(match.params.dishId, 10))[0]}
+            comments={this.state.comments.filter((comment)=>comment.dishId === parseInt(match.params.dishId, 10))} />
+        )
+      }
+
+    
 
     return (
       <div className="App">
@@ -55,6 +63,8 @@ class Main extends Component {
 
             <Route exact path='/menu' component={()=><Menu dishes={this.state.dishes} />} />
             {/* exact -> partial matching disabled */}
+
+            <Route path='/menu/:dishId' component={DishWithid}/>  {/* Routes start matching from top to down and return the first match */}
 
             <Route exact path='/contactus' component={Contact} />
             <Redirect to='/home' />

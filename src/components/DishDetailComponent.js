@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap'
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { ListGroup, ListGroupItem, Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import {Link} from 'react-router-dom'
 
 
 const RenderDish = ({ dish }) => { //name of component(functional or class) must start with capital letter
@@ -41,6 +42,16 @@ const DishDetail = (props) => {
     if (props.dish) {
         return (
             <div className="container">
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h1>{props.dish.name}</h1>
+                    </div>
+                </div>
+                
                 <div className="row mt-5">
                     <div className="col-12 col-md-5 m-2">
                         <Card>
@@ -48,7 +59,7 @@ const DishDetail = (props) => {
                             <RenderDish dish={props.dish} />
                         </Card>
                     </div>
-                    <RenderComment comments={props.dish.comments} />
+                    <RenderComment comments={props.comments} />
                 </div>
             </div>
         )
